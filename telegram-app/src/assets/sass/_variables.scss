@@ -1,0 +1,47 @@
+$baseLine: 1.2rem;
+
+$skewBorderHeight: 0.8em;
+
+$gapBetweenLayers: $skewBorderHeight/2;
+$buttonBoxSlotBorder: $gapBetweenLayers/2;
+$buttonBoxSlotBorderRvr:.18; //0.216em
+
+$chatBoxInfoImageFlexBasis: 0.55;
+
+$gapBetweenSkewBorders: 1.4em;
+$searchFieldHeight: $gapBetweenSkewBorders*2;
+
+$chatboxWidth: 15.625em;
+//$chatboxWidth: 60vw;
+$chatBoxItemleftWidth: 100%;
+
+$borderChatboxInfoImage: 1px;
+$chatBoxAnimationDuration: 0.5s;
+
+
+
+$contentInnerTextShadow: black;
+$shadowsNum: 0;
+//$directions:(bottomRight,bottomLeft,topLeft,topRight);
+$textShadowHeight: $skewBorderHeight/2;
+
+$boxFoldingPadding:$gapBetweenLayers;
+
+$chatViewContentFlexBasis: 0.9;
+
+$chatViewSpacing: $gapBetweenLayers*4;
+
+$textComponentMinHeight: ($buttonBoxSlotBorder*5) + 1em;
+$messageMediaMinHeight: 90px;
+$messageCaptionMinHeight: $skewBorderHeight + 0.8em;
+//$chat-info-description: "only screen and (orientation: landscape), screen and (min-width: 768px)";
+@import "_3dspace";
+@import "_control-items";
+@import "_mqueries-home";
+@import "_mqueries-chatview";
+@import "_zindexes";
+@import "_directions";
+@import "_colors";
+@import "_mixins";
+//@import "_directionsvars";
+@import "_animations";

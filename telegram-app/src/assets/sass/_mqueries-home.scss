@@ -1,0 +1,32 @@
+$box-portrait-small-2col-min-px: 460px;
+$box-portrait-small-2col-max-px: 600px;
+$box-portrait-big-1col-min-px: 601px;
+$box-portrait-big-1col-max-px: 832px;
+$box-portrait-big-2col-min-px: 833px;
+
+$box-landscape-big-1col-min-px: 500px;
+$box-landscape-big-2col-min-px: 833px;
+
+$center-fixed-width: 1080px;
+$side-fillers-appears: $center-fixed-width;
+
+$screen: "only screen and";
+$portrait: "and (orientation: portrait)";
+$landscape: "and (orientation: landscape)";
+
+$chat-rail-edge-transparent-portrait: "(min-width: #{$box-portrait-small-2col-min-px}) and (max-width: #{$box-portrait-small-2col-max-px})";
+$chat-rail-edge-transparent-big-portrait: "(min-width: #{$box-portrait-big-2col-min-px})";
+$chat-portrait-info: "(min-width: #{$box-portrait-big-1col-min-px})";
+$chat-portrait-info-reset-flex-position: "(max-width: #{$box-portrait-big-1col-max-px})";
+$chat-portrait-disable-image-info: "(max-width: #{$box-portrait-small-2col-max-px})";
+
+$chat-landscape-info: "(min-width: #{$box-landscape-big-1col-min-px})";
+$chat-rail-edge-transparent-landscape: "(min-width: #{$box-landscape-big-2col-min-px})";
+$chat-landscape-info-reset-flex-position: "(max-width: #{$box-landscape-big-2col-min-px})";
+
+$center-landscape-fixed-width: "(min-width: #{$center-fixed-width})";
+$side-fillers-landscape: "(min-width: #{$side-fillers-appears})";
+
+$video-thumbnail-m: $box-portrait-big-1col-min-px;
+$video-thumbnail-x: $box-portrait-big-1col-max-px;
+$video-thumbnail-y: $center-fixed-width;

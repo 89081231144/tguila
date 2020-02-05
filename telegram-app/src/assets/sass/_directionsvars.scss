@@ -1,0 +1,27 @@
+@function direction-vars($val)
+{
+  $bottom-box-before-transform: directionGetter-3Lvl($val,"bottom-box","before","transform");
+  $bottom-box-before-transform-origin: directionGetter-3Lvl($val,"bottom-box","before","transform-origin");
+  $bottom-box-before-height: directionGetter-3Lvl($val,"bottom-box","before","height");
+  $bottom-box-before-width: directionGetter-3Lvl($val,"bottom-box","before","width");
+  $bottom-box-before-left: directionGetter-3Lvl($val,"bottom-box","before","left");
+  $bottom-box-after-transform: directionGetter-3Lvl($val,"bottom-box","after","transform");
+  $bottom-box-after-transform-origin: directionGetter-3Lvl($val,"bottom-box","after","transform-origin");
+  $bottom-box-after-left: directionGetter-3Lvl($val,"bottom-box","after","left");
+  $bottom-box-after-top: directionGetter-3Lvl($val,"bottom-box","after","top");
+  $bottom-box-after-height: directionGetter-3Lvl($val,"bottom-box","after","height");
+  $bottom-box-after-width: directionGetter-3Lvl($val,"bottom-box","after","width");
+
+  $top-box-before-transform: directionGetter-3Lvl($val,"top-box","before","transform");
+  $top-box-before-transform-origin: directionGetter-3Lvl($val,"top-box","before","transform-origin");
+  $top-box-before-height: directionGetter-3Lvl($val,"top-box","before","height");
+  $top-box-before-width: directionGetter-3Lvl($val,"top-box","before","width");
+  $top-box-after-top: directionGetter-3Lvl($val,"top-box","after","top");
+  $top-box-after-transform: directionGetter-3Lvl($val,"top-box","after","transform");
+  $top-box-after-transform-origin: directionGetter-3Lvl($val,"top-box","after","transform-origin");
+  $top-box-after-height: directionGetter-3Lvl($val,"top-box","after","height");
+  $top-box-after-width: directionGetter-3Lvl($val,"top-box","after","width");
+  $top-box-before-left: directionGetter-3Lvl($val,"top-box","before","left");
+  $top-box-after-left: directionGetter-3Lvl($val,"top-box","after","left");
+  $top-box-position: map-get(map-get($val, "top-box"),"position");
+}

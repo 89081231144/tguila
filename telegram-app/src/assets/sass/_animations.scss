@@ -1,0 +1,161 @@
+$animation-background-appear: unquote("animation-background-appear .75s linear 1");
+$animation-background-haze-once: unquote("animation-background-haze .75s linear 1");
+$animation-background-haze-infinite: unquote("animation-background-haze .75s linear infinite");
+$animation-from-left-to-right: unquote("animation-from-left-to-right #{$chatBoxAnimationDuration} cubic-bezier(.68,-0.55,.27,1.55) 1");
+$animation-from-right-to-left: unquote("animation-from-right-to-left #{$chatBoxAnimationDuration} cubic-bezier(.68,-0.55,.27,1.55) 1");
+
+$animation-height-increase: unquote("animation-height-increase .75s linear 1");
+$animation-top-increase: unquote("animation-top-increase .75s linear 1");
+
+$animation-pads-move-to-top: unquote("pads-move-to-top .3s linear 1");
+
+$translation-top-right: unquote("translation-top-right 15s linear 1");
+$translation-bottom-left: unquote("translation-bottom-left 15s linear 1");
+$translation-left: unquote("translation-left 15s linear 1");
+@mixin animation-pads-move-to-top{
+  animation: $animation-pads-move-to-top;
+  animation-fill-mode: forwards;
+}
+@mixin animation-from-left-to-right {
+  animation: $animation-from-left-to-right;
+}
+@mixin animation-from-right-to-left {
+  animation: $animation-from-right-to-left;
+}
+@mixin animation-background-appear {
+  animation: $animation-background-appear;
+  //animation-delay: .75s;
+  animation-fill-mode: forwards;
+  background-clip: content-box;
+}
+@mixin animation-background-haze-after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@mixin animation-background-haze-once {
+  animation: $animation-background-haze-once;
+  @include animation-background-haze-after;
+}
+@mixin animation-background-haze-infinite {
+  animation: $animation-background-haze-infinite;
+  @include animation-background-haze-after;
+}
+
+@mixin animation-height-increase {
+  animation: $animation-height-increase;
+
+}
+@mixin animation-top-increase {
+  animation: $animation-top-increase;
+  animation-delay: .75s;
+  animation-fill-mode: forwards;
+
+}
+
+@mixin keyframes-background-appear {
+  0% {background-color: #3a3c40; color: rgba(201, 219, 220, 0.87);}
+  @for $i from 1 through 9
+  {
+    #{$i}0% {
+                  background: linear-gradient(90deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(180deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(270deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(360deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i})));
+    }
+
+  }
+  100% {background-color: #3a3c40; color: rgba(201, 219, 220, 0.87);}
+}
+
+@mixin keyframes-background-haze {
+  @for $i from 1 through 10
+  {
+    #{$i}0% {
+                  background: linear-gradient(90deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(180deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(270deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i}))),
+                              linear-gradient(360deg, $gapBetweenSkewBordersColor calc(((45%/10)*#{$i})), transparent  calc(((45%/10)*#{$i})));
+    }
+
+  }
+}
+@mixin keyframes-animation-from-left-to-right{
+  0% {
+      margin-right: auto;
+     }
+  50% {
+      margin-right: 0;
+      }
+  100% {
+        margin-left: auto;
+      }
+}
+@mixin keyframes-animation-from-right-to-left{
+  0% {
+      margin-left: auto;
+     }
+  50% {
+      margin-left: 0;
+      }
+  100% {
+        margin-right: auto;
+      }
+}
+@mixin keyframes-animation-height-increase{
+  0% {
+      height: 10%;
+     }
+  50% {
+      height: 50%;
+      }
+  100% {
+        height: 100%;
+      }
+}
+@mixin keyframes-animation-top-increase{
+  0% {
+      top: -100%;
+     }
+  50% {
+      top: -50%;
+      }
+  100% {
+        top: 0%;
+      }
+}
+@mixin pads-move-to-top{
+  from {
+    top: 100%;
+  }
+  to{
+    top: 0%;
+  }
+}
+@mixin translation-top-right{
+  from{
+    transform: translate(0em,0em);
+  }
+  to{
+    transform: translate(50em,-50em);
+  }
+}
+@mixin translation-bottom-left{
+  from{
+    transform: translate(0em,0em);
+  }
+  to{
+    transform: translate(-50em,50em);
+  }
+}
+@mixin translation-left{
+  from{
+    transform: translateX(0em);
+  }
+  to{
+    transform: translateX(-50em);
+  }
+}

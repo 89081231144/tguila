@@ -1,0 +1,28 @@
+const types = {
+  chat:['id','type','title','lastMessage','photo'],
+  chats:['chatIds'],
+  chatTypeSupergroup:['supergroupId'],
+  chatPhoto:['small','big'],
+  file:['_','id','local'],
+  localFile:['path','isDownloadingActive','isDownloadingCompleted'],
+  supergroup:['username','memberCount'],
+  supergroupFullInfo:['description'],
+  messages:['messages'],
+  message:['id','chatId','date','mediaAlbumId','content'],
+  messageText:['_','text','webPage'],
+  messagePhoto:['_','photo','caption'],
+  messageVideo:['_','video','caption'],
+  messageAnimation:['_','animation','caption'],
+  formattedText:['text','entities'],
+  textEntity:['offset','length','type'],
+  textEntityTypeTextUrl:['_','url'],
+  textEntityTypeUrl:['_'],
+  textEntityTypeBold:['_'],
+  textEntityTypeItalic:['_'],
+  webPage:['url','displayUrl','siteName','title','description','photo'],
+  photo:['sizes'],
+  animation:['duration','width','height','fileName','mimeType','thumbnail','animation'],
+  video:['duration','width','height','fileName','mimeType','thumbnail','video'],
+  photoSize:['type','photo']
+};
+export default types;

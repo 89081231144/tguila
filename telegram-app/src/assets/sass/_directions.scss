@@ -1,0 +1,136 @@
+//$skewBorderHeight
+@function set-directions($val){
+$directions: (
+"topLeft":(
+      "bottom-box":(
+      "before":("transform":rotate(180deg) skew(45deg),"transform-origin":top,"width":100%,"height":$val,"background":false),
+      "after":("transform":rotate(180deg) skewY(45deg),"transform-origin":left,"left":0,"top":-$val,"width":$val,"height":100%,"background":true)
+
+    ),
+    "top-box":(
+      "before":("transform":skewY(45deg),"transform-origin":left,"left":100%,"width":$val,"height":100%,"background":true),
+      "after":("transform":skew(45deg),"transform-origin":top,"left":0,"top":0,"width":100%,"height":$val,"background":false),
+      "position":(bottom,right)
+    ),
+    "top-edge":("transform": rotate(180deg) skew(45deg)),
+    "bottom-edge":("transform": skew(45deg)),
+    "zIndex":("leftSide":1,"centerSide":2,"rightSide":3)
+  ),
+"topRight":(
+    "bottom-box":(
+      "before":("transform":rotate(180deg) skew(-45deg),"transform-origin":top,"width":100%,"height":$val,"background":false),
+      "after":("transform": skewY(-45deg),"transform-origin":left,"left":100%,"top":-$val,"width":$val,"height":100%,"background":true)
+
+    ),
+    "top-box":(
+      "before":("transform": rotate(180deg) skewY(-45deg),"transform-origin":left,"left":0,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(-45deg),"transform-origin":top,"left":0,"top":0,"width":100%,"height":$val,"background":false),
+      "position":(bottom,left)
+    ),
+    "top-edge":("transform": rotate(180deg) skew(-45deg)),
+    "bottom-edge":("transform": skew(-45deg)),
+    "zIndex":("leftSide":3,"centerSide":2,"rightSide":1)
+),
+"bottomRight":(
+    "bottom-box":(
+      "before":("transform":skewY(45deg),"transform-origin":left,"left":100%,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(45deg),"transform-origin":top,"left":0,"top":0,"width":100%,"height":$val,"background":false)
+
+    ),
+    "top-box":(
+      "before":("transform": rotate(180deg) skew(45deg),"transform-origin":top,"left":0,"width":100%,"height":$val,"background":false),
+      "after":("transform": rotate(180deg) skewY(45deg),"transform-origin":left,"left":0,"top":-$val,"width":$val,"height":100%,"background":true),
+      "position":(top,left)
+    ),
+    "top-edge":("transform": skew(45deg)),
+    "bottom-edge":("transform":rotate(180deg) skew(45deg)),
+    "zIndex":("leftSide":3,"centerSide":2,"rightSide":1)
+),
+"bottomLeft":(
+    "bottom-box":(
+      "before":("transform":skewY(-45deg) rotate(180deg),"transform-origin":left,"left":0,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(-45deg),"transform-origin":top,"left":0,"top":0,"width":100%,"height":$val,"background":false)
+
+    ),
+    "top-box":(
+      "before":("transform": skew(-45deg) rotate(180deg),"transform-origin":top,"left":0,"width":100%,"height":$val,"background":false),
+      "after":("transform": skewY(-45deg),"transform-origin":left,"left":100%,"top":-$val,"width":$val,"height":100%,"background":true),
+      "position":(top,right)
+    ),
+    "top-edge":("transform":skew(-45deg)),
+    "bottom-edge":("transform":rotate(180deg) skew(-45deg)),
+    "zIndex":("leftSide":1,"centerSide":2,"rightSide":3)
+)
+);
+@return $directions;
+}
+
+@function set-directions-view($val){
+$directions: (
+"topLeft":(
+      "top-box":(
+      "before":("transform":rotate(180deg) skew(45deg),"transform-origin":top,"width":100%,"height":$val,"background":false),
+      "after":("transform":rotate(180deg) skewY(45deg),"transform-origin":left,"left":0,"top":0,"width":$val,"height":100%,"background":true)
+
+    ),
+    "bottom-box":(
+      "before":("transform":skewY(45deg),"transform-origin":left,"left":100%,"width":$val,"height":100%,"background":true),
+      "after":("transform":skew(45deg),"transform-origin":top,"left":0,"top":100%,"width":100%,"height":$val,"background":false),
+      "position":(bottom,right)
+    ),
+    "top-edge":("transform": rotate(180deg) skew(45deg)),
+    "bottom-edge":("transform": skew(45deg)),
+    "zIndex":("leftSide":8,"centerSide":5,"rightSide":2)
+  ),
+"topRight":(
+    "top-box":(
+      "before":("transform":rotate(180deg) skew(-45deg),"transform-origin":top,"width":100%,"height":$val,"background":false),
+      "after":("transform": skewY(-45deg),"transform-origin":left,"left":100%,"top":0,"width":$val,"height":100%,"background":true)
+
+    ),
+    "bottom-box":(
+      "before":("transform": rotate(180deg) skewY(-45deg),"transform-origin":left,"left":0,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(-45deg),"transform-origin":top,"left":0,"top":100%,"width":100%,"height":$val,"background":false),
+      "position":(bottom,left)
+    ),
+    "top-edge":("transform": rotate(180deg) skew(-45deg)),
+    "bottom-edge":("transform": skew(-45deg)),
+    "zIndex":("leftSide":2,"centerSide":5,"rightSide":8)
+),
+"bottomRight":(
+    "top-box":(
+      "before":("transform":skewY(45deg),"transform-origin":left,"left":100%,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(45deg),"transform-origin":top,"left":0,"top":100%,"width":100%,"height":$val,"background":false)
+
+    ),
+    "bottom-box":(
+      "before":("transform": rotate(180deg) skew(45deg),"transform-origin":top,"left":0,"width":100%,"height":$val,"background":false),
+      "after":("transform": rotate(180deg) skewY(45deg),"transform-origin":left,"left":0,"top":0,"width":$val,"height":100%,"background":true),
+      "position":(top,left)
+    ),
+    "top-edge":("transform": skew(45deg)),
+    "bottom-edge":("transform":rotate(180deg) skew(45deg)),
+    "zIndex":("leftSide":2,"centerSide":5,"rightSide":8)
+),
+"bottomLeft":(
+    "top-box":(
+      "before":("transform":skewY(-45deg) rotate(180deg),"transform-origin":left,"left":0,"width":$val,"height":100%,"background":true),
+      "after":("transform": skew(-45deg),"transform-origin":top,"left":0,"top":100%,"width":100%,"height":$val,"background":false)
+
+    ),
+    "bottom-box":(
+      "before":("transform": skew(-45deg) rotate(180deg),"transform-origin":top,"left":0,"width":100%,"height":$val,"background":false),
+      "after":("transform": skewY(-45deg),"transform-origin":left,"left":100%,"top":0,"width":$val,"height":100%,"background":true),
+      "position":(top,right)
+    ),
+    "top-edge":("transform":skew(-45deg)),
+    "bottom-edge":("transform":rotate(180deg) skew(-45deg)),
+    "zIndex":("leftSide":8,"centerSide":5,"rightSide":2)
+)
+);
+@return $directions;
+}
+
+@function directionGetter-3Lvl($list,$key1,$key1_1, $key_1_1_value){
+  @return map-get(map-get(map-get($list, $key1),$key1_1),$key_1_1_value);
+}

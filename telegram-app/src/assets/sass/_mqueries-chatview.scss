@@ -1,0 +1,16 @@
+$chatViewWidth: 460px;
+
+//$chatViewIncreaseBottomLayers: 510px;
+$chatPictureMaxWidth: 90px;
+$hideRightControls: 800px;
+
+
+$chatView-min460px: "(min-width: #{$chatViewWidth})";
+$chatView-sidePins: "(max-width: #{$chatViewWidth + $leftButtonWidth*2})";
+$chatView-510px: "(min-width: 510px)";
+$chatView-600px: "(min-width: 600px)";
+$chatView-750px: "(min-width: 750px)";
+$chatView-1080px: "(min-width: 1080px)";
+$chatViewSidePins-510px: "(min-width: #{$chatViewWidth + $leftButtonWidth*2})";
+$chatViewChats-600px: "(min-width: #{$hideRightControls})";
+$chatView-calcPadsFlanks: "(min-width: #{($leftButtonWidth*6*2) + $chatViewWidth})";

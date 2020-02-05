@@ -1,0 +1,35 @@
+$leftButtonHeight: 54px;
+$leftButtonWidth: 54px;
+$closeButtonWidth: calc(100% - #{$leftButtonWidth*2} - #{$gapBetweenLayers*2});
+
+$pinEdgeGradient: 0.2em;
+
+$triangleGradientCathet: 30;
+$triangleGradientCathetSlope: 0.38;
+$triangleBasisGradient: 0.19;
+
+@mixin gradient-left-triangle($color) {
+  background: linear-gradient(-#{$triangleGradientCathet + 180}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(#{$triangleGradientCathet}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(-90deg, $color 0%, $color percentage($triangleBasisGradient), transparent percentage($triangleBasisGradient));
+}
+@mixin gradient-right-triangle($color) {
+  background: linear-gradient(#{$triangleGradientCathet + 180}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(-#{$triangleGradientCathet}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(90deg, $color 0%, $color percentage($triangleBasisGradient), transparent percentage($triangleBasisGradient));
+}
+
+@mixin gradient-center-minimize($color) {
+  background: linear-gradient(to bottom, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope + (1 - $triangleGradientCathetSlope*2)), $color percentage($triangleGradientCathetSlope + (1 - $triangleGradientCathetSlope*2))),
+              linear-gradient(to right, $color 0%, $color percentage($triangleBasisGradient), transparent percentage($triangleBasisGradient), transparent percentage(1 - $triangleBasisGradient), $color percentage(1 - $triangleBasisGradient) );
+}
+@mixin gradient-top-triangle($color) {
+  background: linear-gradient(-#{$triangleGradientCathet + 90}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(#{$triangleGradientCathet + 90}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(0deg, $color 0%, $color percentage($triangleBasisGradient), transparent percentage($triangleBasisGradient));
+}
+@mixin gradient-bottom-triangle($color) {
+  background: linear-gradient(#{$triangleGradientCathet + 270}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(-#{$triangleGradientCathet + 270}deg, $color 0%, $color percentage($triangleGradientCathetSlope), transparent percentage($triangleGradientCathetSlope)),
+              linear-gradient(180deg, $color 0%, $color percentage($triangleBasisGradient), transparent percentage($triangleBasisGradient));
+}

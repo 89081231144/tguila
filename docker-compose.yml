@@ -1,0 +1,57 @@
+version: '3'
+services:
+  telegram-client:
+    build:
+      context: ./telegram-client
+    image: telegram-client:latest
+    entrypoint:
+        - node
+        - src/server.js
+    volumes:
+      - telegram-db-dev:/usr/src/app/telegram-db
+    container_name: telegram-client
+    restart: always
+    ports:
+      - "3333:3333"
+    networks:
+      - telegram-app-net
+  telegram-app:
+    build:
+       context: ./telegram-app
+       args:
+               NODE_ENV: production 
+               APP_SERVER_PROTOCOL: https
+    image: telegram-app:latest
+    volumes:
+      - telegram-db-dev:/mnt:ro
+      - certbot-webroot-tguila:/usr/src/app/public/.well-known
+      - certbot-letsencrypt:/etc/letsencrypt
+    container_name: telegram-app
+    extra_hosts:
+            #- "tguila.com:127.0.0.1"
+      - "tguila.com:127.0.0.1"
+    restart: always
+    ports:
+            #      - "80:80"
+      - "443:443"
+    networks:
+      - telegram-app-net
+  certbot:
+    build:
+      context: ./certbot
+    image: certbot:latest
+    container_name: certbot
+    restart: always
+    networks:
+      - front-net
+    volumes:
+      - certbot-webroot-tguila:/webroots/tguila.com/.well-known
+      - certbot-letsencrypt:/etc/letsencrypt
+volumes:
+  telegram-db:
+  telegram-db-dev:
+  certbot-webroot-tguila:
+  certbot-letsencrypt:
+networks:
+  telegram-app-net:
+  front-net:
